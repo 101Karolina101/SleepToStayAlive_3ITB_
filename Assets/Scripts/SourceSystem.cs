@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,5 +52,15 @@ public class SourceSystem : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void RemoveResources(int woodAmount, int stoneAmoutn)
+    {
+        if(wood >= woodAmount && stone >= stoneAmoutn)
+        {
+            wood -= woodAmount;
+            stone -= stoneAmoutn;
+            WoodChanged?.Invoke(wood);
+                }
     }
 }

@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour
 
             /*Collider collider = GetComponent<Collider>();
             bld.transform.localPosition = new Vector3(bld.transform.position.x + collider.bounds.size.x / 2, bld.transform.position.y, bld.transform.position.z + collider.bounds.size.z / 2);*/
-            Vector3 pos = new Vector3(0.5f, 0, 0.5f);
+            Vector3 pos = new Vector3(1.025f, 0, 1.025f);
             bld.transform.localPosition = pos;
 
             TileData.isOccupied = true;
