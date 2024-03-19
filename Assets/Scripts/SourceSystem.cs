@@ -54,13 +54,19 @@ public class SourceSystem : MonoBehaviour
         return false;
     }
 
-    public void RemoveResources(int woodAmount, int stoneAmoutn)
+    public bool RemoveResources(int woodAmount, int stoneAmoutn)
     {
         if(wood >= woodAmount && stone >= stoneAmoutn)
         {
             wood -= woodAmount;
             stone -= stoneAmoutn;
             WoodChanged?.Invoke(wood);
-                }
+            StoneChanged?.Invoke(stone);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

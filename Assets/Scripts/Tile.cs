@@ -18,7 +18,7 @@ public class Tile : MonoBehaviour
 
     internal void Build(GameObject prefab)
     {
-        if (sourceSystem.RemoveWood(5))
+        if (sourceSystem.RemoveResources(10, 5))//sourceSystem.RemoveWood(5)
         {
             var bld = Instantiate(prefab, transform);
             //bld.transform.localPosition = Vector3.zero;
