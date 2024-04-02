@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be83a2e2ea657ef4b9dabfa3f307d307, type: 3}
+  m_Name: Building Scriptable
+  m_EditorClassIdentifier: 
+  buildingImage: {fileID: 6978777357555647600, guid: de351ebd26ac80940ab20540e8bf1512,
+    type: 3}
+  buildings:
+  - buildingType: 0
+    name: House :D
+    description: Still the same house I live in :D
+    woodCost: 10
+    stoneCost: 5
+    buildingPrefab: {fileID: 7068135562169411754, guid: 2449632ccbac32c4bb6706c3ea753f16,
+      type: 3}
+    buildingSprite: {fileID: 21300000, guid: e4427e38b04608643b71f522a9ce8226, type: 3}
+  - buildingType: 1
+    name: 'Toweeeeer '
+    description: 'Peew peew - - - '
+    woodCost: 5
+    stoneCost: 10
+    buildingPrefab: {fileID: 2506017339725629727, guid: ca5df7fb9f9271444bad2d2ca350620c,
+      type: 3}
+    buildingSprite: {fileID: 21300000, guid: 28052debd6d6f5a408027a33e7dcd1d6, type: 3}
+  - buildingType: 2
+    name: WALL
+    description: Eraser cat :)
+    woodCost: 0
+    stoneCost: 10
+    buildingPrefab: {fileID: 3087382122182718666, guid: 765215e5e983d5641b5f6cb92fc1c579,
+      type: 3}
+    buildingSprite: {fileID: 21300000, guid: 4cb2ecc3c03266c4c864e9b1a02a00c3, type: 3}

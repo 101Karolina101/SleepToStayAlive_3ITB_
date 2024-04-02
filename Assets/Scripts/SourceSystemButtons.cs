@@ -20,4 +20,10 @@ public class SourceSystemButtons : MonoBehaviour
     {
         sourceSystem.AddStone(5);
     }
+
+    public void AddResources()
+    {
+        sourceSystem.AddWood(500);
+        sourceSystem.AddStone(500);
+    }
 }
