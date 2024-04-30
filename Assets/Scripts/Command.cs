@@ -10,13 +10,14 @@ public abstract class Command
 public class BuildCommand : Command
 {
     public Tile tile;
-    public GameObject prefab;
+    //public GameObject prefab;
+    public BuildingData buildingData;
 
     public override void Execute()
     {
-        if (tile != null && prefab != null)
+        if (tile != null && buildingData != null)
         {
-            tile.Build(prefab);
+            tile.Build(buildingData);
         }
     }
 }
