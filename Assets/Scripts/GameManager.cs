@@ -32,10 +32,15 @@ public class GameManager : MonoBehaviour
     Vector3 cameraPos;
     Vector3 cameraRot;
 
+    GunScript gunScript;
+
+    Camera mainCamera;
+
     private void Start()
     {
-        cameraPos = Camera.main.transform.position;
-        cameraRot = Camera.main.transform.eulerAngles;
+        mainCamera = Camera.main;
+        cameraPos = mainCamera.transform.position;
+        cameraRot = mainCamera.transform.eulerAngles;
     }
 
     private void Update()
@@ -84,19 +89,52 @@ public class GameManager : MonoBehaviour
     void SetBuildingPhase()
     {
         //aktivní - grid, šedý bar, resources, pryč - player
+        mainCamera.gameObject.SetActive(true);
+        mainCamera.transform.position = cameraPos;
+        mainCamera.transform.eulerAngles = cameraRot;
+        //TODO deaktivovat mířítko hráče když ho deaktivuji - dát kurzor na volný místo fixed
+
         player.SetActive(false);
         OnGamePhaseChanged?.Invoke(gamePhase);
 
-        Camera.main.transform.position = cameraPos;
-        Camera.main.transform.eulerAngles = cameraRot;
-        //TODO deaktivovat mířítko hráče když ho deaktivuji - dát kurzor na volný místo fixed
+        Cursor.lockState = CursorLockMode.None;
+
+        if (gunScript)
+        {
+            gunScript.gameObject.SetActive(false);
+        }
+        else
+        {
+            gunScript = FindObjectOfType<GunScript>();
+            if (gunScript)
+            {
+                gunScript.gameObject.SetActive(false);
+            }
+        }
     }
 
     void SetCombatPhase()
     {
         //aktivní - player, pryč - grid, šedý bar, resources
+        mainCamera.gameObject.SetActive(false);
+
         player.SetActive(true);
         OnGamePhaseChanged?.Invoke(gamePhase);
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+        if (gunScript)
+        {
+            gunScript.gameObject.SetActive(true);
+        }
+        else
+        {
+            gunScript = FindObjectOfType<GunScript>();
+            if (gunScript)
+            {
+                gunScript.gameObject.SetActive(true);
+            }
+        }
     }
 }
 
