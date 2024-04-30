@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     public int damage { get; private set; } = 10;
     public float speed { get; private set; } = 1.0f;
 
-
+    //walk funkce - random pozice/jít do středu/...?
+    //attack funkce
+    //funkce na objevení player objektu
 }
 
 /*
